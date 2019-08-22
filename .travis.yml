@@ -348,3 +348,5 @@ jobs:
       env: PROFILE="-Dinclude-kinesis -Djdk9"
       script: ./tools/travis/nightly.sh split_checkpoints.sh
       name: checkpoints - jdk 9
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
